@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  api-level-1:
+    build:
+      context: ./level_1
+    volumes:
+      - ./level_1:/app/api
+    ports:
+      - "3000:3000"
+
+  api-level-2:
+    build:
+      context: ./level_2
+    volumes:
+      - ./level_2:/app/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - level-2-redis
+
+  level-2-redis:
+    image: redis:6-alpine
+    ports:
+      - "6379:6379"
