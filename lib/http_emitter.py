@@ -1,12 +1,12 @@
-import itertools
-import requests
 import uuid
+
+import requests
 
 import lib.log_generator as log_generator
 
 ENDPOINT = "http://127.0.0.1:3000"
 
-for i in range(1000):
+for _ in range(1000):
     try:
         requests.post(
             ENDPOINT, json={"log": log_generator.sample(uuid.uuid4())}, timeout=0.1
