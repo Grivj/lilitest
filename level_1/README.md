@@ -98,3 +98,28 @@ Code 201
 ```json
 null
 ```
+
+#### `/logs/{uuid}`
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:3000/logs/de9565ce-56cf-4e9e-98ec-2c76487be251' \
+  -H 'accept: application/json'
+```
+
+```json
+Code 200
+```
+
+```json
+{
+  "id": "de9565ce-56cf-4e9e-98ec-2c76487be251",
+  "service_name": "admin",
+  "process": "admin.3298",
+  "samples": [
+    ["load_avg_1m", 0.113],
+    ["load_avg_5m", 0.365],
+    ["load_avg_15m", 0.922]
+  ]
+}
+```
