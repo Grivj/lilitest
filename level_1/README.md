@@ -18,7 +18,7 @@ id=0060cd38-9dd5-4eff-a72f-9705f3dd25d9 service_name=api process=api.233 sample#
 To start the container and the app, run the following command from the root path of the main folder:
 
 ```bash
-docker-compose up api-level-1
+docker-compose up --build api-level-1
 ```
 
 Doing so will start the app on `localhost:3000`.
